@@ -1,4 +1,4 @@
-package com.ujwal.users.controller;
+package com.ujwal.controller;
 
 import static com.ujwal.config.Constants.TOKEN_PREFIX;
 

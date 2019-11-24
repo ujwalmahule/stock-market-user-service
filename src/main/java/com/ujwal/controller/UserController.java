@@ -1,4 +1,4 @@
-package com.ujwal.users.controller;
+package com.ujwal.controller;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ujwal.exception.UserError;
 import com.ujwal.model.User;
 import com.ujwal.repository.UserRepository;
-import com.ujwal.user.exception.UserError;
 
 @RestController
 public class UserController {

@@ -1,4 +1,4 @@
-package com.ujwal.user.exception;
+package com.ujwal.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

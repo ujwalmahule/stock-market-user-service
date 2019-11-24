@@ -10,10 +10,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.ujwal.exception.ResourceNotFoundException;
 import com.ujwal.model.User;
 import com.ujwal.repository.UserRepository;
 import com.ujwal.service.UserService;
-import com.ujwal.user.exception.ResourceNotFoundException;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
