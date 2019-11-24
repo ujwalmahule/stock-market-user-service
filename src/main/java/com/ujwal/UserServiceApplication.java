@@ -21,10 +21,5 @@ public class UserServiceApplication {
 	public String home() {
 		return "Eureka Client application";
 	}
-	
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
 }
 	
