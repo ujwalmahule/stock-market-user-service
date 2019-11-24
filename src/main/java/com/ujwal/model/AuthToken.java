@@ -2,7 +2,7 @@ package com.ujwal.model;
 
 public class AuthToken {
 
-	String userName;
+	String username;
 	String token;
 	int userType;
 	
@@ -10,19 +10,19 @@ public class AuthToken {
 		// for JSON
 	}
 
-	public AuthToken(String userName, int userType, String token) {
+	public AuthToken(String username, int userType, String token) {
 		super();
-		this.userName = userName;
+		this.username = username;
 		this.userType = userType;
 		this.token = token;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getToken() {

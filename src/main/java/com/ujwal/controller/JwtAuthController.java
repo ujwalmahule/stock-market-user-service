@@ -32,15 +32,15 @@ public class JwtAuthController {
 	@PostMapping("/authenticate")
 	public ApiResponse<AuthToken> authenticate(@RequestBody LoginUser loginUser) throws AuthenticationException {
 		
-		final String userName = loginUser.getUsername(); 
-        authenticate(userName, loginUser.getPassword());
-        final User user = userService.findOne(userName);
+		final String username = loginUser.getUsername(); 
+        authenticate(username, loginUser.getPassword());
+        final User user = userService.findOne(username);
         final String token = jwtTokenUtil.generateToken(user);
-        return new ApiResponse<>(200, "success",new AuthToken(userName, user.getUserType(), TOKEN_PREFIX + token));
+        return new ApiResponse<>(200, "success",new AuthToken(username, user.getUserType(), TOKEN_PREFIX + token));
     }
 
-	private void authenticate(String userName, String password) {
-		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, password));
+	private void authenticate(String username, String password) {
+		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 		
 	}
 }
