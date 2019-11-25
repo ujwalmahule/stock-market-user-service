@@ -29,13 +29,22 @@ public class UserController {
 		return repository.findAll();
 	}
 	
+	@PostMapping("/createAdmin")
+	public User createAdmin(@Valid @RequestBody User user) {
+		return createUser(user, 0);
+	}
+	
 	@PostMapping("/signup")
 	public User signup(@Valid @RequestBody User user) {
+		return createUser(user, 1);
+	}
+
+	private User createUser(User user, int userType) {
 		repository.findByEmail(user.getEmail()).ifPresent(foundUser -> {throw new UserError("User", "Please choose a different email");});
 		repository.findByUsername(user.getUsername()).ifPresent(foundUser -> {throw new UserError("User", "Please choose a different username");});
-		//by default the user is deactivated
-		user.setActive(false);
-		user.setUserType(1);
+		//by default the user is deactivated and admin is active
+		user.setActive(userType==0);
+		user.setUserType(userType);
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		return repository.save(user);
 	}
