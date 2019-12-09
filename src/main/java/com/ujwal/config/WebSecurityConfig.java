@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//no need of csrf and cors
 		httpSecurity.cors().and().csrf().disable().
 			//do not authenticate some requests
-            authorizeRequests().antMatchers("/authenticate", "/signup", "/createAdmin").permitAll()
+            authorizeRequests().antMatchers("/authenticate", "/signup", "/createAdmin", "/updatePassword").permitAll()
             //all other requests need authentication
             .anyRequest().authenticated()
             //make sure we use stateless session; session won't be used to
